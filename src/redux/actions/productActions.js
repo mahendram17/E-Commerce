@@ -12,6 +12,12 @@ export const fetchProduct =  (id)=> async (dispatch)=>{
     const response = await FakeStoreApi.get(`/products/${id}`)
     dispatch({type:ActionTypes.SELECTED_PRODUCTS,payload:response.data}) 
 }
+
+export const addToCartProduct= (id)=> async (dispatch)=>{
+    const response = await FakeStoreApi.get(`/products/${id}`)
+    console.log("Inside add to cart",response)
+    dispatch({type:ActionTypes.SELECTED_PRODUCTS,payload:response.data}) 
+}
 export const setProducts=(products)=>{
     return {
         type:ActionTypes.SET_PRODUCTS, // constants from action-types.js file

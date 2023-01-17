@@ -2,7 +2,7 @@ import React,{useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import {useDispatch, useSelector} from 'react-redux'
-import { fetchProduct,removeSelectedProduct } from '../redux/actions/productActions'
+import { fetchProduct,removeSelectedProduct , addToCartProduct} from '../redux/actions/productActions'
 import { Audio } from 'react-loader-spinner'
 export default function () {
     const product=useSelector((state)=>state.product)
@@ -52,7 +52,7 @@ export default function () {
                 <div className="hidden content">
                   <i className="shop icon"></i>
                 </div>
-                <div className="visible content">Add to Cart</div>
+                <div className="visible content" onClick={()=>dispatch(addToCartProduct({productId}))}>Add to Cart</div>
               </div>
             </div>
           </div>

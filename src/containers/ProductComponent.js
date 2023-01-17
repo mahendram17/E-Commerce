@@ -10,12 +10,13 @@ export default function ProductComponent() {
     const { id, title, image, price, category } = product;
   
     return (
-      <div className="four wide column" key={id}>
+      <div className="four wide column" key={id} style={{paddingTop:'2.75rem'}}>
           {Object.keys(product).length === 0 ? (
       <div><Audio/></div>
     ) : (
         <Link to={`/product/${id}`}>
-          <div className="ui link cards">
+          
+          <div className="ui link cards" >
             <div className="card">
               <div className="image">
                 <img src={image} alt={title} />
